@@ -4,6 +4,12 @@ import { useShows } from '../misc/custom-hooks';
 import { apiGet } from '../misc/config';
 import ShowGrid from '../components/show/ShowGrid';
 
+const mystyle = {
+  display: "flex",
+  justifyContent: "center"
+};
+
+
 const Starred = () => {
 
   const [starred] = useShows();
@@ -34,9 +40,9 @@ const Starred = () => {
 
   return (
     <MainPageLayout>
-      {isLoading && <div>Shows are still loading</div>}
+      {isLoading && <div style={mystyle}>Shows are still loading</div>}
       {error && <div>Error occured: {error}</div>}
-      {!isLoading && !shows && <div>No shows were added</div>}
+      {!isLoading && !shows && <div style={mystyle}>No shows were added</div>}
       {!isLoading && !error && shows && <ShowGrid data={shows} />}
     </MainPageLayout>
   )

@@ -7,9 +7,14 @@ import {useLastQuery } from '../misc/custom-hooks';
 import {SearchInput, RadioInputsWrapper, SearchButtonWrapper} from './Home.styled';
 import CustomRadio from '../components/CustomRadio';
 
+const mystyle = {
+  display: "flex",
+  justifyContent: "center"
+};
+
 const renderResults = (result) => {
   if(result && result.length === 0){
-    return <div>No results</div>
+    return <div style={mystyle}>No results</div>
   }
 
   if(result && result.length > 0){
