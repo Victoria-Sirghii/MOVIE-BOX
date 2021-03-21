@@ -9,7 +9,7 @@ const ShowCard = ({id, image, name, summary, onStarClick, isStarred }) => {
   const summaryAsText = summary
   ? `${summary.split(' ').slice(0, 10).join(' ').replace(/<.+?>/g, '')}...`
   : 'No description';
-
+  
   return (
     <StyledShowCrad>
       <div className="img-wrapper">
